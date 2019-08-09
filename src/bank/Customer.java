@@ -32,7 +32,7 @@ public class Customer {
         }
     }
 
-    public Account lookupanAccount(String number) {
+    public Account lookUpAnAccount(String number) {
         Account ac = null;
 
         for (int i = 0; i < accounts.length; i++) {
