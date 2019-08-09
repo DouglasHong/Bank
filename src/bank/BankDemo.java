@@ -31,8 +31,8 @@ public class BankDemo {
             AccountType accttype = accounts[i].getAcct();
             Name name = c.getName();
             String acctnumber = accounts[i].getAcctNumber();
-            System.out.println(name.getFirstname() + name.getLastname() + " has an account type of "
-                    + accttype.getType() + " with a balance of "
+            System.out.println(name.getFirstname() + name.getLastname() + " has an account type of"
+                    + accttype.getType() + " with a balance of $"
                     + bal.getBalance() + " and an account number of " + acctnumber);
 
         }
@@ -57,18 +57,18 @@ public class BankDemo {
 
     public void creditDebit(Customer c) {
         String acctnumber = "acct#2";
-        Account a = c.lookupanAccount(acctnumber);
+        Account a = c.lookUpAnAccount(acctnumber);
         if (a != null) {
             double curBal = a.getBal().getBalance();
             a.credit(55);
             double newBal = a.getBal().getBalance();
-            System.out.println("Current balance is " + curBal + " and the new balance is "
+            System.out.println("Current balance is $" + curBal + " and the new balance is $"
                     + newBal);
             curBal = a.getBal().getBalance();
             boolean success = a.debit(100);
             newBal = a.getBal().getBalance();
             if (success == true) {
-                System.out.println("Current balance is " + curBal + " and the new balance is "
+                System.out.println("Current balance is $" + curBal + " and the new balance is $"
                         + newBal);
             } else {
                 System.out.println("Withdraw denied");
@@ -81,16 +81,16 @@ public class BankDemo {
 
     public void calculateInterest(Customer c, String number) {
 
-        Account acc = c.lookupanAccount(number);
+        Account acc = c.lookUpAnAccount(number);
 
         if (acc == null) {
             System.out.println("Account not found");
 
         } else {
-            System.out.println("The balance for this account was " + acc.getBal().getBalance());
+            System.out.println("The balance for this account was $" + acc.getBal().getBalance());
             double newInterest = acc.calculateInterest(5, 2);
-            System.out.println("After the interest calcualations ,your new balance for this account is "
-                    + acc.getBal().getBalance() + " and the interest is " + newInterest);
+            System.out.println("After the interest calcualations, your new balance for this account is $"
+                    + acc.getBal().getBalance() + " and the interest is $" + newInterest);
         }
 
     }
